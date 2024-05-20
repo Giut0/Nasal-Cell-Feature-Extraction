@@ -21,7 +21,6 @@ def genera_csv_per_immagini(directory_base, nome_file_csv):
         writer.writerow(['filename', 'class'])
         writer.writerows(dati_immagini)
 
-# Esempio di utilizzo
 directory_base = 'isolated_cells/'
-nome_file_csv = 'single_cell_dataset.csv'
+nome_file_csv = 'isolated_cells/single_cell_dataset.csv'
 genera_csv_per_immagini(directory_base, nome_file_csv)

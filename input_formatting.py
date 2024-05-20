@@ -3,10 +3,10 @@ import pandas as pd
 import cv2
 
 # Caricare il CSV
-df = pd.read_csv('Nasal Cell Detection/_annotations.csv')
+df = pd.read_csv('data/_annotations.csv')
 
 # Directory di output
-output_dir = 'path/to/output_directory'
+output_dir = 'isolated_cells/'
 
 # Creare le cartelle per le classi
 classes = df['class'].unique()
@@ -17,7 +17,7 @@ for cls in classes:
 # Funzione per ritagliare e salvare le immagini
 def save_cropped_images(df, output_dir):
     for index, row in df.iterrows():
-        image_path = f"Nasal Cell Detection/{row['filename']}"
+        image_path = f"data/images/{row['filename']}"
         image = cv2.imread(image_path)
         
         # Coordinate di ritaglio
@@ -33,5 +33,4 @@ def save_cropped_images(df, output_dir):
         # Salvare l'immagine ritagliata
         cv2.imwrite(output_path, cropped_image)
 
-# Eseguire la funzione
 save_cropped_images(df, output_dir)

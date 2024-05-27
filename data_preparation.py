@@ -1,26 +1,28 @@
 import os
 import csv
 
-def genera_csv_per_immagini(directory_base, nome_file_csv):
-    # Lista per memorizzare le informazioni delle immagini
-    dati_immagini = []
+'''
+This script generates a csv file containing the file name and class for each isolated cell image.
+'''
 
-    # Percorri la directory base
-    for root, dirs, files in os.walk(directory_base):
+def generate_csv_file(base_directory, csv_file):
+
+    img_data = []
+
+    for root, dirs, files in os.walk(base_directory):
         for file in files:
-            # Ottieni il percorso completo del file
-            percorso_completo = os.path.join(root, file)
-            # Ottieni la cartella dove si trova il file
-            nome_cartella = os.path.basename(root)
-            # Aggiungi le informazioni alla lista
-            dati_immagini.append([file, nome_cartella])
+            # Get file complete path
+            complete_path = os.path.join(root, file)
+            # Get the folder where the file is located
+            directory_name = os.path.basename(root)
+            img_data.append([file, directory_name])
 
-    # Scrivi i dati nel file CSV
-    with open(nome_file_csv, mode='w', newline='') as file_csv:
+    # Write data to csv file
+    with open(csv_file, mode='w', newline='') as file_csv:
         writer = csv.writer(file_csv)
         writer.writerow(['filename', 'class'])
-        writer.writerows(dati_immagini)
+        writer.writerows(img_data)
 
-directory_base = 'isolated_cells/'
-nome_file_csv = 'isolated_cells/single_cell_dataset.csv'
-genera_csv_per_immagini(directory_base, nome_file_csv)
+base_directory = 'isolated_cells/'
+csv_file = 'isolated_cells/single_cell_dataset.csv'
+generate_csv_file(base_directory, csv_file)

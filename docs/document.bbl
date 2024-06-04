@@ -1,0 +1,17 @@
+\begin{thebibliography}{1}
+
+\bibitem{liu_feature_2013}
+Qing Liu and Xiping Liu.
+\newblock Feature extraction of human viruses microscopic images using gray
+  level co-occurrence matrix.
+\newblock In {\em 2013 International Conference on Computer Sciences and
+  Applications}, pages 619--622. {IEEE}.
+
+\bibitem{Baker_2021}
+Khalid Baker, Rakan Rashid, Nashat Salih, Abdulkarim Alsandi, Omar~Farook
+  Mohammad, Baker, and Nashat Alsandi.
+\newblock Classification of image blood cancer by using multi-training rnn.
+\newblock {\em Turkish Online Journal of Qualitative Inquiry}, 12:1065--10475,
+  07 2021.
+
+\end{thebibliography}

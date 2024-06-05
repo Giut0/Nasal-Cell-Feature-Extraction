@@ -6,6 +6,16 @@
 \usepackage{hyperref}
 \hypersetup{hidelinks}
 \usepackage{marvosym}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	filecolor=magenta,      
+	urlcolor=cyan,
+	pdfpagemode=FullScreen,
+	citecolor=black
+}
+\graphicspath{{./img/}}
+
 \title{Features extraction dalle immagine di cellule della mucosa nasale}
 \author{Vito Proscia\href{v.proscia3@studenti.uniba.it}{\textsuperscript{\Letter}}}
 \date{} % clear date
@@ -58,21 +68,21 @@
 						\centering
 						\begin{subfigure}[h]{70px}
 							\centering
-							\includegraphics[width=2cm, height=2cm]{img/ciliate.jpg}
+							\includegraphics[width=2cm, height=2cm]{ciliate.jpg}
 							\caption{Ciliate}
 							\label{fig:image1}
 						\end{subfigure}
 						\hfill
 						\begin{subfigure}[h]{70px}
 							\centering
-							\includegraphics[width=2cm, height=2cm]{img/mucipare.jpg}
+							\includegraphics[width=2cm, height=2cm]{mucipare.jpg}
 							\caption{Mucipare}
 							\label{fig:image2}
 						\end{subfigure}
 						\hfill
 						\begin{subfigure}[h]{70px}
 							\centering
-							\includegraphics[width=2cm, height=2cm]{img/neutrofili.jpg}
+							\includegraphics[width=2cm, height=2cm]{neutrofili.jpg}
 							\caption{Neutrofili}
 							\label{fig:image3}
 						\end{subfigure}
@@ -80,21 +90,21 @@
 						\label{fig:multiple_images1}
 						\begin{subfigure}[h]{70px}
 							\centering
-							\includegraphics[width=2cm, height=2cm]{img/mast.jpg}
+							\includegraphics[width=2cm, height=2cm]{mast.jpg}
 							\caption{Mastociti}
 							\label{fig:image4}
 						\end{subfigure}
 						\hfill
 						\begin{subfigure}[h]{70px}
 							\centering
-							\includegraphics[width=2cm, height=2cm]{img/linfociti.jpg}
+							\includegraphics[width=2cm, height=2cm]{linfociti.jpg}
 							\caption{Linfociti}
 							\label{fig:image5}
 						\end{subfigure}
 						\hfill
 						\begin{subfigure}[h]{70px}
 							\centering
-							\includegraphics[width=2cm, height=2cm]{img/eosinophil.jpg}
+							\includegraphics[width=2cm, height=2cm]{eosinophil.jpg}
 							\caption{Granulociti}
 							\label{fig:image6}
 						\end{subfigure}
@@ -102,26 +112,26 @@
 						\label{fig:multiple_images2}
 						\begin{subfigure}[h]{70px}
 							\centering
-							\includegraphics[width=2cm, height=2cm]{img/metaplatic.jpg}
+							\includegraphics[width=2cm, height=2cm]{metaplatic.jpg}
 							\caption{Metaplastiche}
 							\label{fig:image7}
 						\end{subfigure}
 						\hfill
 						\begin{subfigure}[h]{70px}
 							\centering
-							\includegraphics[width=2cm, height=2cm]{img/epiteliali.jpg}
+							\includegraphics[width=2cm, height=2cm]{epiteliali.jpg}
 							\caption{Epiteliali}
 							\label{fig:image8}
 						\end{subfigure}
 						\hfill
 						\begin{subfigure}[h]{70px}
 							\centering
-							\includegraphics[width=2cm, height=2cm]{img/batteri.jpg}
+							\includegraphics[width=2cm, height=2cm]{batteri.jpg}
 							\caption{Batteri}
 							\label{fig:image9}
 						\end{subfigure}
 						
-						\caption{Descrizione complessiva delle immagini}
+						\caption{Differenti tipologie di cellule nel dataset}
 						\label{fig:multiple_images3}
 					\end{figure}
 		
@@ -130,7 +140,6 @@
 		
 		\subsection{Image processing}
 			Originariamente il dataset ricevuto era composto da una serie di immagini di cellule, ogni immagine contava più cellule insieme, tutte annotate con le rispettive coordinate e classi di appartenenza.\\
-			\linebreak
 			Per i nostri scopi si è andati ad isolare ogni singola cellula dalle immagini originali, per poi prodourre un file che contenesse i nomi delle immagini delle singole cellule e le loro classi corrispondenti.
 			
 		\subsection{Features extraction}
@@ -164,7 +173,7 @@
 				 			
 		\subsection{Classificazione}
 		
-			Le features estratte sono state successivamente testate allenando il modello \textbf{Random Forest}, modello \textit{ensambled} di apprendimento automatico supervisionato che combina molteplici alberi decisionali per migliorare le previsioni. \\
+			Le features estratte sono state successivamente testate allenando il modello \textbf{Random Forest}, modello \textit{ensambled} di apprendimento automatico supervisionato che combina molteplici alberi decisionali, ognuno dei queli addestrato su un subset casuale dei dati, per migliorare le previsioni.\\ 
 			\linebreak
 			Dopo varie sperimentazioni si riporta la migliore configurazione del modello:
 			

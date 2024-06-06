@@ -92,3 +92,10 @@ Le caratteristiche della texture descrivono le variazioni nei livelli di grigio 
 
 ### 3. Features di Colore
 Le caratteristiche del colore sono importanti per descrivere le proprietà visive delle immagini delle cellule, in questo, caso per ogni immagine, si è andati a salvare l'istogramma dei colori.
+
+
+<div align="center">
+<br>
+    <img src="docs/img/Diagram1.png" alt="Solarized dark" width="450"/>
+</div>
+

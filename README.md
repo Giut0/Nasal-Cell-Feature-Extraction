@@ -39,5 +39,27 @@ Le caratteristiche della texture descrivono le variazioni nei livelli di grigio 
 ### 3. Features di Colore
 Le caratteristiche del colore sono importanti per descrivere le proprietà visive delle immagini delle cellule, in questo, caso per ogni immagine, si è andati a salvare l'istogramma dei colori.
 
+## Learning 🧠
+La combinazione delle features descritte è stata usata per allenare il modello Random Forest con l'obiettivo di catalogare le immagini cellulari.
 
+<div align="center">
+  <table border="1">
+    <tr>
+      <th>Metrica</th>
+      <th>Valore</th>
+    </tr>
+    <tr>
+      <td>Accuracy</td>
+      <td>0.800</td>
+    </tr>
+    <tr>
+      <td>Precision</td>
+      <td>0.782</td>
+    </tr>
+    <tr>
+      <td>Recall</td>
+      <td>0.800</td>
+    </tr>
+  </table>
+</div>
 

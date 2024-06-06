@@ -16,62 +16,8 @@ Inizialmente il dataset era composto da una serie di immagini di cellule, ogni i
 
 <div align="center">
 <br>
-<div style="display: flex; justify-content: center; gap: 30px">
-  <div>
-    <img src="docs/img/ciliate.jpg" alt="Solarized dark" width="120"/>
-    <br>
-    Ciliate
-  </div>
-  <div>
-    <img src="docs/img/mucipare.jpg" alt="Solarized Ocean" width="120"/>
-    <br>
-    Mucipare
-  </div>
-  <div>
-    <img src="docs/img/neutrofili.jpg" alt="Solarized Ocean" width="120"/>
-    <br>
-    Neutrofili
-  </div>
-</div>
-<br>
+    <img src="docs/img/cell_type.png" alt="Solarized dark" width="450"/>
 
-<div style="display: flex; justify-content: center; gap: 30px;">
-  <div>
-    <img src="docs/img/mast.jpg" alt="Solarized dark" width="120"/>
-    <br>
-    Mastociti
-  </div>
-  <div>
-    <img src="docs/img/linfociti.jpg" alt="Solarized Ocean" width="120"/>
-    <br>
-    Linfociti
-  </div>
-  <div>
-    <img src="docs/img/eosinophil.jpg" alt="Solarized Ocean" width="120"/>
-    <br>
-    Granulociti
-  </div>
-</div>
-<br>
-
-<div style="display: flex; justify-content: center; gap: 30px;">
-  <div>
-    <img src="docs/img/metaplatic.jpg" alt="Solarized dark" width="120"/>
-    <br>
-    Metaplastiche
-  </div>
-  <div>
-    <img src="docs/img/epiteliali.jpg" alt="Solarized Ocean" width="120"/>
-    <br>
-    Epiteliali
-  </div>
-  <div>
-    <img src="docs/img/batteri.jpg" alt="Solarized Ocean" width="120"/>
-    <br>
-    Batteri
-  </div>
-</div>
-<br>
 Figure 1: Differenti tipologie di cellule nel dataset
 </div>
 
@@ -94,8 +40,4 @@ Le caratteristiche della texture descrivono le variazioni nei livelli di grigio 
 Le caratteristiche del colore sono importanti per descrivere le proprietà visive delle immagini delle cellule, in questo, caso per ogni immagine, si è andati a salvare l'istogramma dei colori.
 
 
-<div align="center">
-<br>
-    <img src="docs/img/Diagram1.png" alt="Solarized dark" width="450"/>
-</div>
 

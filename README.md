@@ -26,11 +26,11 @@ Figure 1: Differenti tipologie di cellule nel dataset
 
 Con l'obiettivo di estrarre delle informazioni dalle immagini cellulari si è andati a combinare diverse tipologie di features:
 
-### 1. Features Morfologiche
+### 1. Feature Morfologiche
 
 Per ogni contorno trovato si salvano aera e perimetro.
 
-### 2. Features di Texture
+### 2. Feature di Texture
 
 Le caratteristiche della texture descrivono le variazioni nei livelli di grigio all'interno dell'immagine, usando le matrici di co-occorrenza a livello di grigio (GLCM) è stato possibile estrapolare varie proprietà come:
 
@@ -40,7 +40,7 @@ Le caratteristiche della texture descrivono le variazioni nei livelli di grigio 
 - **Energia**: misura la quantità di ordine e ripetitività nella texture, Valori elevati di energia indicano una texture altamente strutturata e ripetitiva;
 - **Correlazione**: misura quanto una coppia di pixel varia in modo correlato rispetto alla media.
 
-### 3. Features di Colore
+### 3. Feature di Colore
 
 Le caratteristiche del colore sono importanti per descrivere le proprietà visive delle immagini delle cellule, in questo caso, per ogni immagine, si è andati a salvare l'istogramma dei colori.
 

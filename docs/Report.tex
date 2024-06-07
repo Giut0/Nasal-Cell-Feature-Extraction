@@ -24,7 +24,7 @@
 	\maketitle
 	
 	\begin{abstract}
-		Uno degli step determinanti dell'image analysis, specialmente in ambito biomedico, è l'estrazione delle features da immagini cellulari, la Citologia Nasale è una tecnica clinica utile alla diagnostica in ambito rinoallergologico, essa si basa sull'analisi delle immagini della mucosa nasale, in questo report presentremo tecniche di features extraction per meglio estrarre informazioni da queste immagini cellulari usando varie metodologie quali morphological extraction, texture extraction e color extraction, per poi testare i dati estratti allenando un classificatori con l'obiettivo di meglio catalogare le singole cellule fornendo un supporto per il lavoro dei citologi.  
+		Uno degli step determinanti dell'image analysis, specialmente in ambito biomedico, è l'estrazione delle features da immagini cellulari, la Citologia Nasale è una tecnica clinica utile alla diagnostica in ambito rinoallergologico, essa si basa sull'analisi delle immagini della mucosa nasale, in questo report presentremo tecniche di features extraction per meglio estrarre informazioni da queste immagini cellulari usando varie metodologie quali morphological extraction, texture extraction e color extraction, per poi testare i dati estratti allenando un classificatore con l'obiettivo di meglio catalogare le singole cellule fornendo un supporto al lavoro dei citologi.  
 	\end{abstract}
 	
 	\section{Introduzione}
@@ -39,22 +39,22 @@
 			\subsection{Cellule della mucosa nasale}
 			
 				\subsubsection{Estrazione}
-					Inizialmente si dilata la narice con uno Speculum nasale, successivamente si preleva con il Rhinoprobe una quantità di materiale cellulare dalla mucosa nasale, infine si striscia il materiale su un vetrino e lo si colora, essendo trasparente, con May Grumwald Giemsa, un colorante tendente al viola.
+					Inizialmente si dilata la narice con uno \textit{Speculum} nasale, successivamente si preleva con il Rhinoprobe una quantità di materiale cellulare dalla mucosa nasale, infine si striscia il materiale su un vetrino e lo si colora, essendo trasparente, con \textit{May Grumwald Giemsa}, un colorante tendente al viola.
 					
 			
 				\subsubsection{Tipologie di cellule}
-					In una mucosa nasale si possono trovare, nelle giuste proporzioni, diverse popolazioni di cellule tra quelle che compongono il dataset fornito possiamo distinguere:
+					In una mucosa nasale si possono trovare, nelle giuste proporzioni, diverse popolazioni di cellule, tra quelle che compongono il dataset fornito possiamo distinguere:
 					
 					\begin{itemize}
 						\item \textit{Ciliate}: cellule epiteliali più comuni, responsabili del movimento del muco, sono caratterizzate dal nucleo situato ad un’altezza variabile dal fondo della cellula e dalle “ciglia” situate in alto;
 						
-						\item \textit{Mucipare}: responsabili della produzione di muco, l’insieme di queste cellule ha la funzione di creare un flusso costante di fluido che si scarica nella faringe.
+						\item \textit{Mucipare}: responsabili della produzione di muco, l’insieme di queste cellule ha la funzione di creare un flusso costante di fluido che si scarica nella faringe;
 						
 						\item \textit{Neutrofili}: caratterizzate da più nuclei legati da sottilissimi filamenti di materiale nucleare all'interno del citoplasma;
 						
-						\item \textit{Mastocit}: cellule immunitarie rotondeggianti od ovale composti da granuli circondati da membrana, intervengono nella genesi delle reazioni allergiche, di ipersensibilità e anafilattiche;
+						\item \textit{Mastociti}: cellule immunitarie rotondeggianti od ovali composti da granuli circondati da membrana, intervengono nella genesi delle reazioni allergiche, di ipersensibilità e anafilattiche;
 						
-						\item \textit{Linfociti}: analizzano i germi che penetrano attraverso il naso, memorizzarli e preparare la produzione di anticorpi specifici, caratterizzate dall’avere un nucleo molto grande che ricopre quasi interamente la superficiale della cellula stessa;
+						\item \textit{Linfociti}: analizzano i germi che penetrano attraverso il naso memorizzandoli per poi preparare la produzione di anticorpi specifici, caratterizzate dall’avere un nucleo molto grande che ricopre quasi interamente la superficie della cellula stessa;
 						
 						\item \textit{Granulociti eobsinofili}: tipo di globuli bianchi che hanno funzione di difesa dell'organismo, caratterizzati dall’avere due nuclei collegati tra loro;
 						
@@ -136,22 +136,21 @@
 					\end{figure}
 		
 	\section{Materiali e metodi}
-		In questa sezione approfondiremo come si è andato ad elaborare il dataset e i successivi metodi di features extraction per poi effettuare un test delle features ottenute andando ad allenare, su qeste, un classificatore con l'obiettivo di discriminare il tipo delle cellule. \footnote{Link sperimentazione: \href{https://github.com/Giut0/Nasal-Cell-Feature-Extraction}{https://github.com/Giut0/Nasal-Cell-Feature-Extraction}}
+		In questa sezione approfondiremo come si è andati ad elaborare il dataset ed i successivi metodi di features extraction, per poi effettuare un test delle features ottenute andando ad allenare, su queste, un classificatore con l'obiettivo di discriminare il tipo delle cellule. \footnote{Link sperimentazione: \href{https://github.com/Giut0/Nasal-Cell-Feature-Extraction}{https://github.com/Giut0/Nasal-Cell-Feature-Extraction}}
 		
 		\subsection{Image processing}
 			Originariamente il dataset ricevuto era composto da una serie di immagini di cellule, ogni immagine contava più cellule insieme, tutte annotate con le rispettive coordinate e classi di appartenenza.\\
 			Per i nostri scopi si è andati ad isolare ogni singola cellula dalle immagini originali, per poi prodourre un file che contenesse i nomi delle immagini delle singole cellule e le loro classi corrispondenti.
 			
 		\subsection{Features extraction}
-			Per caratterizzare ogni singola cellula isolata è necessario estrarre, da queste, delle informazioni, per poi usare il tutto allenando un classificatore.
-			\linebreak
+			Per caratterizzare ogni singola cellula isolata è necessario estrarre, da queste, delle informazioni, per poi usare il tutto allenando un classificatore.\\
 			In questo caso si è pensato di combinare tre differenti tipologie di features:
 			
 				\subsubsection{Feature morfologiche}
 					Le caratteristiche morfologiche includono dimensioni, forme e bordi delle cellule, si sono ottenute convertendo ogni immagine in bianco e nero, successivamente trovando i contorni (massimo 2 in questo caso essendo cellule isolate quindi cellula stessa e nucleo) ed infine per ogni contorno trovato si salvano sia l’area che il perimetro.
 					
 				\subsubsection{Feature di texture}
-					Le caratteristiche della texture descrivono le variazioni nei livelli di grigio all'interno dell'immagine, per questo scopo si sono usate le matrici di co-occorrenza a livello di grigio (GLCM) \cite{liu_feature_2013}, strumento per l’analisi delle texture di un’immagine in scala di grigi, misura le frequenza di coppie di pixel con valori d’intensità specifici (livelli di grigio) ad una data distanza e angolo (nel nostro caso specifico la distanza di valutazione è stata impostata ad 1 e l'angolo a 0), le informazioni ottenibili con questo strumento sono :
+					Le caratteristiche della texture descrivono le variazioni nei livelli di grigio all'interno dell'immagine, per questo scopo si sono usate le matrici di co-occorrenza a livello di grigio (GLCM) \cite{liu_feature_2013}, strumento per l’analisi delle texture di un’immagine in scala di grigi, misura la frequenza di coppie di pixel con valori d’intensità specifici (livelli di grigio) ad una data distanza e angolo (nel nostro caso specifico la distanza di valutazione è stata impostata a 1 e l'angolo a 0°), le informazioni ottenibili con questo strumento sono :
 					
 					\begin{itemize}
 						
@@ -161,7 +160,7 @@
 						
 						\item \textbf{Omogeneità}: misura quanto i pixel vicini sono simili in termini di intensità; $$\sum_{i,j=0}^{levels-1}\frac{P_{i,j}}{1+(i-j)^2}$$
 						
-						\item \textbf{Energia}: misura la quantità di ordine e ripetitività nella texture, Valori elevati di energia indicano una texture altamente strutturata e ripetitiva; $$\sqrt{\sum_{i,j=0}^{levels-1} P_{i,j}^2}$$
+						\item \textbf{Energia}: misura la quantità di ordine e ripetitività nella texture, valori elevati di energia indicano una texture altamente strutturata e ripetitiva; $$\sqrt{\sum_{i,j=0}^{levels-1} P_{i,j}^2}$$
 						
 						\item \textbf{Correlazione}: misura quanto una coppia di pixel varia in modo correlato rispetto alla media. $$\sum_{i,j=0}^{levels-1} P_{i,j}\left[\frac{(i-\mu_i) \
 							(j-\mu_j)}{\sqrt{(\sigma_i^2)(\sigma_j^2)}}\right]$$
@@ -173,7 +172,7 @@
 				 			
 		\subsection{Classificazione}
 		
-			Le features estratte sono state successivamente testate allenando il modello \textbf{Random Forest}, modello \textit{ensambled} di apprendimento automatico supervisionato che combina molteplici alberi decisionali, ognuno dei queli addestrato su un subset casuale dei dati, per migliorare le previsioni.\\ 
+			Le features estratte sono state successivamente testate allenando il modello \textbf{Random Forest}, modello \textit{ensambled} di apprendimento automatico supervisionato che combina molteplici alberi decisionali, ognuno dei quali addestrato su un subset casuale dei dati, per migliorare le previsioni.\\ 
 			\linebreak
 			Dopo varie sperimentazioni si riporta la migliore configurazione del modello:
 			
@@ -214,7 +213,7 @@
 		\end{table}
 		
 	\section{Conslusioni}
-	L'obiettivo principale della sperimentazione è l'estrazione di features da immagini cellulari della mucosa nasale, in primo luogo siamo andati ad isolare le singole cellule dalle immaigni utilizzando le coordinate fornite, successivamente c'è stata la fase di feature extraction andando a combinare tre differenti metodologie quali morphological extraction, texture extraction e color extraction ed infine abbiamo provato ad allenare un classificatore sui dati ottenuti ottenendo dei buoni risultati.\\
+	L'obiettivo principale della sperimentazione è l'estrazione di features da immagini cellulari della mucosa nasale, in primo luogo siamo andati ad isolare le singole cellule dalle immaigni utilizzando le coordinate fornite, successivamente c'è stata la fase di feature extraction andando a combinare tre differenti metodologie quali morphological extraction, texture extraction e color extraction ed infine abbiamo provato ad allenare un classificatore sui dati ottenuti raggiungendo dei buoni risultati.\\
 	Tuttavia, ci sono ancora ampi margini di miglioramento che possono aiutare il modello ad effettuare delle migliori predizioni, magari provando a combinare il tutto con altre tecniche come la trasformata di Fourier, oppure intraprendendo la strada del deep learning.
 	
 	

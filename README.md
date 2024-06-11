@@ -28,16 +28,16 @@ Con l'obiettivo di estrarre delle informazioni dalle immagini cellulari si è an
 
 ### 1. Feature Morfologiche
 
-Per ogni contorno trovato si salvano aera e perimetro.
+Per ogni contorno trovato si salvano area e perimetro.
 
 ### 2. Feature di Texture
 
-Le caratteristiche della texture descrivono le variazioni nei livelli di grigio all'interno dell'immagine, usando le matrici di co-occorrenza a livello di grigio (GLCM) è stato possibile estrapolare varie proprietà come:
+Le caratteristiche della texture descrivono le variazioni nei livelli di grigio all'interno dell'immagine, usando le matrici di co-occorrenza a livelli di grigio (GLCM) è stato possibile estrapolare varie proprietà come:
 
 - **Contrasto**: indica quanto variano i livelli di grigio tra i pixel vicini;
 - **Dissimilarità**: tiene conto solo della differenza assoluta tra i livelli di grigio dei pixel vicini, senza elevarla al quadrato;
 - **Omogeneità**: misura quanto i pixel vicini sono simili in termini di intensità;
-- **Energia**: misura la quantità di ordine e ripetitività nella texture, Valori elevati di energia indicano una texture altamente strutturata e ripetitiva;
+- **Energia**: misura la quantità di ordine e ripetitività nella texture, valori elevati di energia indicano una texture altamente strutturata e ripetitiva;
 - **Correlazione**: misura quanto una coppia di pixel varia in modo correlato rispetto alla media.
 
 ### 3. Feature di Colore
